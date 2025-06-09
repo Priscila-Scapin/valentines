@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body {
+  background: #333;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.typewriter h1 {
+  color: #fff;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  word-break: break-word;  
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  max-width: 90vw;  
+  width: fit-content;
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
