@@ -3,8 +3,8 @@ import "nes.css/css/nes.min.css";
 import Image from "next/image";
 
 const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState();
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const audioRef = useRef(null);
 
   const tracks = ["/audio/hysteria-def-leppard.mp3", "/audio/is-this-love-whitesnake.mp3", "/audio/why-cant-this-be-love-van-hallen.mp3", "/audio/enjoy-the-silence.mp3", "/audio/animal-def-leppard.mp3", "/audio/where-are-you-going-dmb.mp3", "/audio/born-to-be-my-babe.mp3", "/audio/breathe-pink-floyd.mp3", "/audio/forever-kiss.mp3"];
@@ -37,13 +37,19 @@ const MusicPlayer = () => {
     setCurrentTrackIndex((prevIndex) => (prevIndex === 0 ? tracks.length - 1 : prevIndex - 1));
   };
 
+  // Toca a nova música automaticamente após troca de faixa
   useEffect(() => {
-    if (isPlaying) {
+    if (isPlaying && audioRef.current) {
       audioRef.current.play().catch((err) => {
         console.warn("Playback prevented", err);
       });
     }
-  }, [currentTrackIndex, isPlaying]);
+  }, [currentTrackIndex]);
+
+  // Toca a próxima música automaticamente quando uma termina
+  const handleEnded = () => {
+    handleNextTrack();
+  };
 
   return (
     <div
@@ -56,7 +62,7 @@ const MusicPlayer = () => {
         padding: "2px",
       }}
     >
-      <audio ref={audioRef} src={tracks[currentTrackIndex]} />
+      <audio ref={audioRef} src={tracks[currentTrackIndex]} onEnded={handleEnded} />
       <button type='button' className='nes-btn is-warning' onClick={handlePreviousTrack}>
         <Image src='/music-player-icons/previous.svg' alt='previous' width={50} height={50} />
       </button>
