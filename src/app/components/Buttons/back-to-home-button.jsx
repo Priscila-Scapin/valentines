@@ -2,7 +2,6 @@ import "nes.css/css/nes.min.css";
 
 const BackToHomeButton = () => {
   const handleBackHome = () => {
-    console.log("ENTROU AQUI");
     window.location.href = "http://localhost:3000/amo-te-mi-carino";
   };
   return (
