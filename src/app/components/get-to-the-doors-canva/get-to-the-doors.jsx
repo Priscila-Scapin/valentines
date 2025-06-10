@@ -83,8 +83,8 @@ const GetToTheDoors = () => {
   return (
     <div
       style={{
-        width: 700,
-        height: 500,
+        width: 600,
+        height: 450,
         opacity: 0.9,
         overflow: "hidden",
         position: "relative",
