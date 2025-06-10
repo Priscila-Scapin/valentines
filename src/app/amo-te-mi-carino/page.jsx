@@ -44,11 +44,9 @@ const MainCounterPage = () => {
   }, []);
 
   return (
-    <main className='relative min-h-screen p-10 font-[Press_Start_2P] text-center overflow-hidden'>
-      {/* Background com opacidade */}
-      <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0"></div>
+    <main className='relative h-full w-full p-10 font-[Press_Start_2P] text-center overflow-auto '>
+      <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0 "></div>
 
-      {/* Conteúdo principal */}
       <div className='relative z-10'>
         <div className='nes-container is-rounded is-dark with-title'>
           <p className='title'>💖 Babe: 💖</p>
@@ -91,7 +89,7 @@ const MainCounterPage = () => {
           <GetToTheDoors />
         </div>
 
-        <div className='flex justify-center mt-2'>
+        <div className='flex justify-center mt-5'>
           <MusicPlayer />
         </div>
       </div>
