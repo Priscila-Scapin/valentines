@@ -2,7 +2,7 @@ import "nes.css/css/nes.min.css";
 
 const BackToHomeButton = () => {
   const handleBackHome = () => {
-    window.location.href = "http://localhost:3000/amo-te-mi-carino";
+    window.location.href = "https://guess-what-psi.vercel.app/amo-te-mi-carino";
   };
   return (
     <div className='flex justify-center' onClick={handleBackHome}>

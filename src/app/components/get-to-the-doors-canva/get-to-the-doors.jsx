@@ -62,7 +62,7 @@ const GetToTheDoors = () => {
       audio.play();
       soundPlayed.current = true;
       setTimeout(function () {
-        window.location.href = "http://localhost:3000/photo-gallery";
+        window.location.href = "https://guess-what-psi.vercel.app/photo-gallery";
       }, 1200);
     }
 
@@ -71,7 +71,7 @@ const GetToTheDoors = () => {
       audio.play();
       soundPlayed.current = true;
       setTimeout(function () {
-        window.location.href = "http://localhost:3000/to-do-list";
+        window.location.href = "https://guess-what-psi.vercel.app/to-do-list";
       }, 1200);
     }
 

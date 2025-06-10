@@ -11,10 +11,10 @@ const ResponsivePage = () => {
     if (width <= 430) {
       setScreenSize("iphone");
     } else if (width >= 834) {
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "https://guess-what-psi.vercel.app/";
       setScreenSize("ipad+");
     } else {
-      window.location.href = "http://localhost:3000/";
+      window.location.href = "https://guess-what-psi.vercel.app/";
       setScreenSize("other");
     }
   };

@@ -44,44 +44,49 @@ const MainCounterPage = () => {
   }, []);
 
   return (
+
     <main className='relative w-full h-screen font-[Press_Start_2P] text-center overflow-hidden'>
+
       <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0"></div>
 
       <div className='relative z-10'>
         <div className='nes-container is-rounded is-dark with-title'>
           <p className='title'>💖 Babe: 💖</p>
           <div>
-            <p>Uma vida inteira ainda será pouco para amar vc.💖</p>
+            <h1>"I do know where you go is where I wanna be."</h1>
           </div>
           <i className='nes-icon is-large heart'></i>
         </div>
 
         <div className='flex justify-center mt-5'>
-          <div className='nes-table-responsive flex self-center'>
-            <table className='nes-table is-bordered is-centered'>
-              <thead>
-                <tr>
-                  <th>Years</th>
-                  <th>Months</th>
-                  <th>Days</th>
-                  <th>Hours</th>
-                  <th>Minutes</th>
-                  <th>Seconds</th>
-                  <th>Miliseconds</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{mainCounter(firstKiss, now, "years")}</td>
-                  <td>{mainCounter(firstKiss, now, "months")}</td>
-                  <td>{mainCounter(firstKiss, now, "days")}</td>
-                  <td>{mainCounter(firstKiss, now, "hours")}</td>
-                  <td>{mainCounter(firstKiss, now, "minutes")}</td>
-                  <td>{mainCounter(firstKiss, now, "seconds")}</td>
-                  <td>{mainCounter(firstKiss, now, "milliseconds")}</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className='nes-container with-title is-centered p-4 inline-block'>
+            <p className='title'>💖✨ Counting every precious moment: 💖✨</p>
+            <div className='nes-table-responsive'>
+              <table className='nes-table is-bordered is-centered m-0'>
+                <thead>
+                  <tr>
+                    <th>Years</th>
+                    <th>Months</th>
+                    <th>Days</th>
+                    <th>Hours</th>
+                    <th>Minutes</th>
+                    <th>Seconds</th>
+                    <th>Miliseconds</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{mainCounter(firstKiss, now, "years")}</td>
+                    <td>{mainCounter(firstKiss, now, "months")}</td>
+                    <td>{mainCounter(firstKiss, now, "days")}</td>
+                    <td>{mainCounter(firstKiss, now, "hours")}</td>
+                    <td>{mainCounter(firstKiss, now, "minutes")}</td>
+                    <td>{mainCounter(firstKiss, now, "seconds")}</td>
+                    <td>{mainCounter(firstKiss, now, "milliseconds")}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
