@@ -44,7 +44,9 @@ const MainCounterPage = () => {
   }, []);
 
   return (
-    <main className='relative min-h-screen p-10 font-[Press_Start_2P] text-center overflow-hidden'>
+
+    <main className='relative w-full h-screen font-[Press_Start_2P] text-center overflow-hidden'>
+
       <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0"></div>
 
       <div className='relative z-10'>
