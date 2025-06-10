@@ -163,7 +163,7 @@ const LoginWithGame = () => {
       if (event.key === "Enter" && magicWord === "chimba") {
         const audio = new Audio("/audio/Secret-Sound.mp3");
         audio.play();
-        window.location.href = "http://localhost:3000/amo-te-mi-carino";
+        window.location.href = "https://guess-what-psi.vercel.app/amo-te-mi-carino";
       }
     };
 

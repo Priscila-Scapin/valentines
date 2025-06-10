@@ -25,7 +25,7 @@ const PhotoGallery = () => {
   };
 
   const handleBackHome = () => {
-    window.location.href = "http://localhost:3000/amo-te-mi-carino";
+    window.location.href = "https://guess-what-psi.vercel.app/amo-te-mi-carino";
   };
   return (
     <main
