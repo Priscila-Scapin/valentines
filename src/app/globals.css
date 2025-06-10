@@ -19,17 +19,6 @@
   }
 }
 
-body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  background: var(--background, #333);
-  color: var(--foreground, #fff);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow:hidden;
-}
-
 .typewriter h1 {
   color: #fff;
   overflow: hidden;

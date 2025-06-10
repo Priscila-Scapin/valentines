@@ -44,21 +44,19 @@ const MainCounterPage = () => {
   }, []);
 
   return (
-    <main className='relative h-full w-full p-10 font-[Press_Start_2P] text-center overflow-auto '>
-      <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0 "></div>
+    <main className='relative h-screen w-screen p-6 font-[Press_Start_2P] text-center overflow-hidden'>
+      <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0 overflow-hidden" />
 
-      <div className='relative z-10'>
-        <div className='nes-container is-rounded is-dark with-title'>
+      <div className='relative z-10 flex flex-col items-center justify-start h-full max-h-full w-full overflow-hidden'>
+        <div className='nes-container is-rounded is-dark with-title w-full max-w-none'>
           <p className='title'>💖 Babe: 💖</p>
-          <div>
-            <p>Uma vida inteira ainda será pouco para amar vc.💖</p>
-          </div>
+          <p>Uma vida inteira ainda será pouco para amar vc.💖</p>
           <i className='nes-icon is-large heart'></i>
         </div>
 
-        <div className='flex justify-center mt-5'>
-          <div className='nes-table-responsive flex self-center'>
-            <table className='nes-table is-bordered is-centered'>
+        <div className='flex justify-center mt-5 w-full max-h-[30vh] overflow-x-auto overflow-y-auto'>
+          <div className='nes-table-responsive'>
+            <table className='nes-table is-bordered is-centered text-xs'>
               <thead>
                 <tr>
                   <th>Years</th>
