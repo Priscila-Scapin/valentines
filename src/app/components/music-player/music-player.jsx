@@ -37,7 +37,6 @@ const MusicPlayer = () => {
     setCurrentTrackIndex((prevIndex) => (prevIndex === 0 ? tracks.length - 1 : prevIndex - 1));
   };
 
-  // Toca a nova música automaticamente após troca de faixa
   useEffect(() => {
     if (isPlaying && audioRef.current) {
       audioRef.current.play().catch((err) => {
@@ -46,7 +45,6 @@ const MusicPlayer = () => {
     }
   }, [currentTrackIndex]);
 
-  // Toca a próxima música automaticamente quando uma termina
   const handleEnded = () => {
     handleNextTrack();
   };
@@ -60,20 +58,21 @@ const MusicPlayer = () => {
         gap: "16px",
         width: "fit-content",
         padding: "2px",
+        height: "5rem",
       }}
     >
       <audio ref={audioRef} src={tracks[currentTrackIndex]} onEnded={handleEnded} />
       <button type='button' className='nes-btn is-warning' onClick={handlePreviousTrack}>
-        <Image src='/music-player-icons/previous.svg' alt='previous' width={50} height={50} />
+        <Image src='/music-player-icons/previous.svg' alt='previous' width={30} height={30} />
       </button>
       <button type='button' className='nes-btn is-error' onClick={handlePlayPause}>
-        <Image src='/music-player-icons/pause.svg' alt='pause' width={50} height={50} />
+        <Image src='/music-player-icons/pause.svg' alt='pause' width={30} height={30} />
       </button>
       <button type='button' className='nes-btn is-success' onClick={handlePlayPause}>
-        <Image src='/music-player-icons/play.svg' alt='play' width={50} height={50} />
+        <Image src='/music-player-icons/play.svg' alt='play' width={30} height={30} />
       </button>
       <button type='button' className='nes-btn is-warning' onClick={handleNextTrack}>
-        <Image src='/music-player-icons/next.svg' alt='next' width={50} height={50} />
+        <Image src='/music-player-icons/next.svg' alt='next' width={30} height={30} />
       </button>
     </div>
   );

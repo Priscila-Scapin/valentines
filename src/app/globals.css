@@ -27,7 +27,7 @@ body {
   background: var(--background, #333);
   color: var(--foreground, #fff);
   font-family: Arial, Helvetica, sans-serif;
-  overflow:hidden;
+
 }
 
 .typewriter h1 {
