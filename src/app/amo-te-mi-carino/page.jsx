@@ -44,28 +44,30 @@ const MainCounterPage = () => {
   }, []);
 
   return (
-    <main className='relative h-screen w-full font-[Press_Start_2P] text-center overflow-hidden flex flex-col justify-between items-center'>
+    <main className='relative min-h-screen w-full font-[Press_Start_2P] text-center overflow-auto flex flex-col justify-between items-center'>
       <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0"></div>
 
-      <div className='relative z-10 flex flex-col items-center justify-evenly w-full h-full px-2 py-4 space-y-4'>
+      <div className='relative z-10 flex flex-col items-center justify-evenly w-full max-w-screen-md px-4 py-6 space-y-6'>
+        {/* Frase inicial */}
         <div className='nes-container is-rounded is-dark with-title w-full'>
-          <p className='title'>💖 Babe: 💖</p>
-          <p className='text-sm sm:text-base break-words px-2'>'I do know, where you go is where I wanna be.' </p>
+          <p className='title text-xs sm:text-sm'>💖 Babe: 💖</p>
+          <p className='text-xs sm:text-sm break-words px-2'>'I do know, where you go is where I wanna be.'</p>
           <i className='nes-icon is-large heart mt-2'></i>
         </div>
 
-        <div className='nes-container with-title is-centered w-full'>
-          <p className='title'>💖✨ Counting every precious moment: 💖✨</p>
-          <table className='nes-table is-bordered is-centered w-full table-fixed text-[10px] sm:text-xs'>
+        {/* Tabela com contador */}
+        <div className='nes-container with-title is-centered w-full overflow-x-auto'>
+          <p className='title text-xs sm:text-sm'>💖✨ Counting every precious moment: 💖✨</p>
+          <table className='nes-table is-bordered is-centered w-full table-auto text-[10px] sm:text-xs'>
             <thead>
               <tr>
-                <th className='break-words'>Years</th>
-                <th className='break-words'>Months</th>
-                <th className='break-words'>Days</th>
-                <th className='break-words'>Hours</th>
-                <th className='break-words'>Minutes</th>
-                <th className='break-words'>Seconds</th>
-                <th className='break-words'>Milliseconds</th>
+                <th className='break-words px-1'>Years</th>
+                <th className='break-words px-1'>Months</th>
+                <th className='break-words px-1'>Days</th>
+                <th className='break-words px-1'>Hours</th>
+                <th className='break-words px-1'>Minutes</th>
+                <th className='break-words px-1'>Seconds</th>
+                <th className='break-words px-1'>Milliseconds</th>
               </tr>
             </thead>
             <tbody>
@@ -82,6 +84,7 @@ const MainCounterPage = () => {
           </table>
         </div>
 
+        {/* Botões */}
         <div className='flex flex-col items-center gap-3'>
           <GetToTheDoors />
           <MusicPlayer />
@@ -92,4 +95,3 @@ const MainCounterPage = () => {
 };
 
 export default MainCounterPage;
-
