@@ -44,52 +44,46 @@ const MainCounterPage = () => {
   }, []);
 
   return (
-    <main className='relative h-full w-full p-10 font-[Press_Start_2P] text-center overflow-hidden'>
+    <main className='relative h-screen w-full font-[Press_Start_2P] text-center overflow-hidden flex flex-col justify-between items-center'>
       <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0"></div>
 
-      <div className='relative z-10'>
-        <div className='nes-container is-rounded is-dark with-title'>
+      <div className='relative z-10 flex flex-col items-center justify-evenly w-full h-full px-2 py-4 space-y-4'>
+        <div className='nes-container is-rounded is-dark with-title w-full'>
           <p className='title'>💖 Babe: 💖</p>
-          <div>
-            <p>Uma vida inteira ainda será pouco para amar vc.💖</p>
-          </div>
-          <i className='nes-icon is-large heart'></i>
+          <p className='text-sm sm:text-base break-words px-2'>'I do know, where you go is where I wanna be.' </p>
+          <i className='nes-icon is-large heart mt-2'></i>
         </div>
 
-        <div className='flex justify-center mt-5'>
-          <div className='nes-table-responsive flex self-center'>
-            <table className='nes-table is-bordered is-centered'>
-              <thead>
-                <tr>
-                  <th>Years</th>
-                  <th>Months</th>
-                  <th>Days</th>
-                  <th>Hours</th>
-                  <th>Minutes</th>
-                  <th>Seconds</th>
-                  <th>Miliseconds</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{mainCounter(firstKiss, now, "years")}</td>
-                  <td>{mainCounter(firstKiss, now, "months")}</td>
-                  <td>{mainCounter(firstKiss, now, "days")}</td>
-                  <td>{mainCounter(firstKiss, now, "hours")}</td>
-                  <td>{mainCounter(firstKiss, now, "minutes")}</td>
-                  <td>{mainCounter(firstKiss, now, "seconds")}</td>
-                  <td>{mainCounter(firstKiss, now, "milliseconds")}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div className='nes-container with-title is-centered w-full'>
+          <p className='title'>💖✨ Counting every precious moment: 💖✨</p>
+          <table className='nes-table is-bordered is-centered w-full table-fixed text-[10px] sm:text-xs'>
+            <thead>
+              <tr>
+                <th className='break-words'>Years</th>
+                <th className='break-words'>Months</th>
+                <th className='break-words'>Days</th>
+                <th className='break-words'>Hours</th>
+                <th className='break-words'>Minutes</th>
+                <th className='break-words'>Seconds</th>
+                <th className='break-words'>Milliseconds</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{mainCounter(firstKiss, now, "years")}</td>
+                <td>{mainCounter(firstKiss, now, "months")}</td>
+                <td>{mainCounter(firstKiss, now, "days")}</td>
+                <td>{mainCounter(firstKiss, now, "hours")}</td>
+                <td>{mainCounter(firstKiss, now, "minutes")}</td>
+                <td>{mainCounter(firstKiss, now, "seconds")}</td>
+                <td>{mainCounter(firstKiss, now, "milliseconds")}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div className='flex justify-center mt-5'>
+        <div className='flex flex-col items-center gap-3'>
           <GetToTheDoors />
-        </div>
-
-        <div className='flex justify-center mt-2'>
           <MusicPlayer />
         </div>
       </div>
@@ -98,3 +92,4 @@ const MainCounterPage = () => {
 };
 
 export default MainCounterPage;
+

@@ -95,10 +95,14 @@ const ToDosList = () => {
           </div>
         </div>
       )}
+
       <div
         style={{
-          position: "absolute",
-          inset: 0,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
           backgroundImage: "url('/backgrounds/to-do-list-bg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -107,16 +111,17 @@ const ToDosList = () => {
         }}
       />
 
-      <div className='relative z-10 flex flex-col items-center w-full'>
+      <div className='relative z-10 flex flex-col items-center w-full flex-grow'>
         <div className='nes-container is-rounded is-dark flex flex-row items-center justify-center gap-5 w-full max-w-[800px] sticky top-0 bg-black bg-opacity-80 py-4 z-20'>
           <p>Goals list</p>
           <i className='nes-icon is-large heart'></i>
         </div>
 
-        <div className='nes-field mt-4 mb-10 w-full max-w-[800px]'>
+        <div className='nes-field mt-16 mb-10 w-full max-w-[800px]'>
           <label htmlFor='error_field'>Create a goal:</label>
           <input value={newToDos} onChange={(e) => setNewToDos(e.target.value)} onKeyDown={handleAddToDos} placeholder='Type a new goal and press Enter' className='nes-input' />
         </div>
+
         {loading ? (
           <div className='absolute inset-0 z-50 flex items-center justify-center pointer-events-none mt-96'>
             <div style={{ width: 400, height: 400 }}>
@@ -133,14 +138,14 @@ const ToDosList = () => {
                 </label>
               ))}
             </div>
-            <div className='flex flex-col justify-center mt-5'>
-              <MusicPlayer />
-            </div>
-
-            <BackToHomeButton />
           </>
         )}
       </div>
+
+      <footer className='relative z-10 flex flex-col items-center justify-center gap-6 mt-12'>
+        <MusicPlayer />
+        <BackToHomeButton />
+      </footer>
     </main>
   );
 };

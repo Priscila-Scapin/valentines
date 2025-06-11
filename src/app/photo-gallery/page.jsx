@@ -28,28 +28,16 @@ const PhotoGallery = () => {
     window.location.href = "https://guess-what-psi.vercel.app/amo-te-mi-carino";
   };
   return (
-    <main
-      style={{
-        position: "relative",
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "2.5rem 20rem",
-        fontFamily: "'Press Start 2P'",
-        textAlign: "center",
-        overflow: "hidden",
-      }}
-    >
+    <main className='relative min-h-screen flex justify-center items-center px-80 py-10 font-[Press_Start_2P] text-center overflow-hidden'>
       <div
+        className='bg-cover bg-center opacity-30 z-0'
         style={{
-          position: "absolute",
-          inset: 0,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
           backgroundImage: "url('/backgrounds/photo-gallery-background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.3,
-          zIndex: 0,
         }}
       />
 
@@ -68,36 +56,14 @@ const PhotoGallery = () => {
           </button>
         </div>
 
-        <div
-          className='flex justify-center mt-3 gap-4'
-          style={{
-            width: "50vw",
-            height: "60vh",
-            border: "6px solid black",
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#fff",
-            maxWidth: 1200,
-            maxHeight: 800,
-          }}
-        >
-          <img
-            src={`/photos/${pics[currentPic]}`}
-            alt='Feira medieval - Maio - 2025'
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-          />
+        <div className='flex justify-center items-center mt-3 gap-4 w-[50vw] h-[60vh] max-w-[1200px] max-h-[800px] border-[6px] border-black overflow-hidden bg-white'>
+          <img src={`/photos/${pics[currentPic]}`} alt='Feira medieval - Maio - 2025' className='w-full h-full object-cover object-center' />
         </div>
 
-        <div className='flex justify-center mt-2'>
+        <div className='flex justify-center gap-10 mt-2'>
           <MusicPlayer />
         </div>
+
         <BackToHomeButton />
       </div>
     </main>
