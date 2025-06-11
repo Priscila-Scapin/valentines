@@ -50,8 +50,7 @@ const MainCounterPage = () => {
       <div className='relative z-10 flex flex-col items-center justify-evenly w-full h-full px-2 py-4 space-y-4'>
         <div className='nes-container is-rounded is-dark with-title w-full'>
           <p className='title'>💖 Babe: 💖</p>
-          <p className='text-sm sm:text-base break-words px-2'>'I do know, where you go is where I wanna be.' </p>
-          <i className='nes-icon is-large heart mt-2'></i>
+          <p className='text-sm sm:text-base break-words px-2'>'I do know, where you go is where I wanna be.'</p>
         </div>
 
         <div className='nes-container with-title is-centered w-full'>
@@ -92,4 +91,3 @@ const MainCounterPage = () => {
 };
 
 export default MainCounterPage;
-
