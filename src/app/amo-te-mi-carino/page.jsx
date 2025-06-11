@@ -48,15 +48,14 @@ const MainCounterPage = () => {
       <div className="absolute inset-0 bg-[url('/backgrounds/home-bg.jpg')] bg-cover bg-center opacity-60 z-0"></div>
 
       <div className='relative z-10 flex flex-col items-center justify-evenly w-full h-full px-2 py-4 space-y-4'>
-        <div className='nes-container is-rounded is-dark with-title w-full max-w-4xl text-center'>
+        <div className='nes-container is-rounded is-dark with-title w-full'>
           <p className='title'>💖 Babe: 💖</p>
           <p className='text-sm sm:text-base break-words px-2'>'I do know, where you go is where I wanna be.'</p>
-          <i className='nes-icon is-large heart mt-2'></i>
         </div>
 
-        <div className='nes-container with-title is-centered w-full max-w-4xl text-center mt-4'>
+        <div className='nes-container with-title is-centered w-full'>
           <p className='title'>💖✨ Counting every precious moment: 💖✨</p>
-          <table className='nes-table is-bordered is-centered w-full table-auto text-[10px] sm:text-xs text-center'>
+          <table className='nes-table is-bordered is-centered w-full table-fixed text-[10px] sm:text-xs'>
             <thead>
               <tr>
                 <th className='break-words'>Years</th>
