@@ -4,9 +4,12 @@ import React, { useRef, useEffect, useState } from "react";
 
 const LoginWithGame = () => {
   const canvasRef = useRef(null);
+  const [gameKey, setGameKey] = useState(0);
   const [magicWord, setMagicWord] = useState();
+  const [playKiss, setPlayKiss] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
+  const [showAskGene, setShowAskGene] = useState();
   const [gameCompleted, setGameCompleted] = useState(false);
-  const [gameKey, setGameKey] = useState(0); // usado para reiniciar o jogo
 
   useEffect(() => {
     if (gameCompleted) return;
@@ -158,12 +161,22 @@ const LoginWithGame = () => {
     };
   }, [gameCompleted, gameKey]);
 
+  const handlePlayKiss = () => {
+    const audio = new Audio("/audio/i-was-made-for-lovin-you-kiss.mp3");
+    audio.play();
+    audio.addEventListener("ended", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  };
+
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "Enter" && magicWord === "chimba") {
+      if (event.key === "Enter" && magicWord === "chimbadogildo") {
+        console.log("!entrou", magicWord);
         const audio = new Audio("/audio/Secret-Sound.mp3");
         audio.play();
-        window.location.href = "https://guess-what-psi.vercel.app/amo-te-mi-carino";
+        window.location.href = "http://localhost:3000/amo-te-mi-carino";
       }
     };
 
@@ -174,17 +187,90 @@ const LoginWithGame = () => {
     };
   }, [magicWord]);
 
-  return (
-    <div style={{ textAlign: "center", marginTop: "20px" }}>
-      {!gameCompleted && <canvas ref={canvasRef} width={480} height={320} style={{ border: "1px solid #000" }} />}
+  useEffect(() => {
+    if (playKiss) {
+      handlePlayKiss();
+    }
+  }, [playKiss]);
 
-      {gameCompleted && (
-        <div className='nes-container with-title is-centered flex flex-column' style={{ width: 500, margin: "auto" }}>
-          <div className='nes-field' style={{ marginTop: 12 }}>
-            <label htmlFor='password'>Magic word:</label>
-            <input type='password' id='password' className='nes-input is-dark' onChange={(e) => setMagicWord(e.target.value)} placeholder='Type the magic word and press enter' style={{ backgroundColor: "#212529", padding: "1rem" }} />
+  useEffect(() => {
+    if (!gameCompleted) return;
+
+    const warningTimeout = setTimeout(() => {
+      setShowWarning(true);
+    }, 40 * 1000);
+
+    const askTimeout = setTimeout(() => {
+      setShowAskGene(true);
+      setShowWarning(false);
+    }, 2 * 60 * 1000);
+    return () => {
+      clearTimeout(warningTimeout);
+      clearTimeout(askTimeout);
+    };
+  }, [gameCompleted]);
+
+  useEffect(() => {
+    if (!gameCompleted) return;
+
+    const warningTimeout = setTimeout(() => {
+      setShowWarning(true);
+    }, 30 * 1000);
+
+    const askTimeout = setTimeout(() => {
+      setShowAskGene(true);
+      setShowWarning(false);
+    }, 1 * 60 * 1000);
+
+    return () => {
+      clearTimeout(warningTimeout);
+      clearTimeout(askTimeout);
+    };
+  }, [gameCompleted]);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        {!gameCompleted && <canvas ref={canvasRef} width={480} height={320} style={{ border: "1px solid #000" }} />}
+
+        {gameCompleted && (
+          <div className='nes-container with-title is-centered flex flex-column' onClick={() => setPlayKiss(true)} style={{ width: 500 }}>
+            <div className='nes-field' style={{ marginTop: 12 }}>
+              <label htmlFor='password'>Magic word:</label>
+              <input type='password' id='password' className='nes-input is-dark w-150 mt-4' onChange={(e) => setMagicWord(e.target.value)} placeholder='Type the magic word and press enter' style={{ backgroundColor: "#212529", padding: "1rem" }} />
+            </div>
           </div>
-        </div>
+        )}
+      </div>
+      {showWarning && gameCompleted && (
+        <footer
+          className='nes-container is-dark with-title'
+          style={{
+            padding: "1rem",
+            marginTop: "15rem",
+            alignSelf: "flex-end",
+            textAlign: "right",
+            maxWidth: "300px",
+          }}
+        >
+          <p className='title'>💡 </p>
+          <p>Why dont you ask Link? Maybe he knows the magic word...</p>
+        </footer>
+      )}
+      {showAskGene && gameCompleted && (
+        <footer
+          className='nes-container is-dark with-title'
+          style={{
+            padding: "1rem",
+            marginTop: "15rem",
+            alignSelf: "flex-end",
+            textAlign: "right",
+            maxWidth: "300px",
+          }}
+        >
+          <p className='title'>💡 </p>
+          <p>Whoooa, Kiss! \,,/ Wait, Link doesn't know the magic word? Well... Maybe Gene can help you...</p>
+        </footer>
       )}
     </div>
   );
